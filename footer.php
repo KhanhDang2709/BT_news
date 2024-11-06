@@ -17,27 +17,22 @@
          </div>
          <div class="col-lg-3 col-md-6 mb-5">
              <h5 class="mb-4 text-white text-uppercase font-weight-bold">Popular News</h5>
-             <div class="mb-3">
-                 <div class="mb-2">
-                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                     <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+             <?php
+                $get3NewItem = $item->getNewItem(0, 3);
+                foreach ($get3NewItem as $key => $value) :
+                    $cateName = $category->getNameById($value['category']);
+                ?>
+                 <div class="mb-3">
+                     <div class="mb-2">
+
+                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?php echo $cateName[0]['name'] ?></a>
+                         <a class="text-body" href=""><small><?php //date format: Oct 31 , 2024
+                                                                echo $value['created_at'] ?></small></a>
+                     </div>
+
+                     <a class="small text-body text-uppercase font-weight-medium" href=""><?php echo $value['name'] ?></a>
                  </div>
-                 <a class="small text-body text-uppercase font-weight-medium" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
-             </div>
-             <div class="mb-3">
-                 <div class="mb-2">
-                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                     <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                 </div>
-                 <a class="small text-body text-uppercase font-weight-medium" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
-             </div>
-             <div class="">
-                 <div class="mb-2">
-                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
-                     <a class="text-body" href=""><small>Jan 01, 2045</small></a>
-                 </div>
-                 <a class="small text-body text-uppercase font-weight-medium" href="">Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
-             </div>
+             <?php endforeach ?>
          </div>
          <div class="col-lg-3 col-md-6 mb-5">
              <h5 class="mb-4 text-white text-uppercase font-weight-bold">Categories</h5>

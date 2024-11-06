@@ -51,6 +51,7 @@ class Item extends Db
         where `content` 
         Like ?
         LIMIT ?,?");
+        $keyword = "%$keyword%";
         $sql->bind_param("sii", $keyword, $start, $count);
         $sql->execute();
         $items = array();
@@ -63,6 +64,7 @@ class Item extends Db
         $sql = self::$connection->prepare("SELECT * From `items`  
         where `content` 
         Like ?");
+        $keyword = "%$keyword%";
         $sql->bind_param("s", $keyword);
         $sql->execute();
         $items = array();
