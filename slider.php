@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-md-6 px-0">
                     <?php
-                    $get3NewItem = $item->getNewItem(3, 4);
+                    $get3NewItem = $item->getNewItem(4, 5);
                     foreach ($get3NewItem as $key => $value) :
                         $cateName = $category->getNameById($value['category']);
                     ?>

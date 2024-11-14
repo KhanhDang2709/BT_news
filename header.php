@@ -105,7 +105,7 @@ $getAllItem = $item->getAllItems();
                     <?php
                     foreach ($getAllCates as $key => $value) :
                     ?>
-                        <a href="category.html" class="nav-item nav-link"><?php echo $value['name'] ?></a>
+                        <a href="archive.php?cate-id=<?php echo $value['id'] ?>" class="nav-item nav-link"><?php echo $value['name'] ?></a>
                     <?php endforeach ?>
                 </div>
                 <form action="result.php" method="get">

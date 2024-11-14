@@ -20,13 +20,12 @@
 
                                 <div class="bg-white border border-top-0 p-4">
                                     <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                            href=""><?php echo $cateName[0]['name'] ?></a>
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href=""><?php echo $cateName[0]['name'] ?></a>
                                         <a class="text-body" href=""><small><?php //date format: Oct 31 , 2024
                                                                             echo $value['created_at'] ?></small></a>
                                     </div>
                                     <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href=""><?php echo $value['name'] ?></a>
-                                    <p class="m-0"><?php echo $value['name'] ?></p>
+                                    <p class="m-0"><?php echo $value['excerpt'] ?></p>
                                 </div>
                                 <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
                                     <div class="d-flex align-items-center">
@@ -53,8 +52,7 @@
 
                                 <div class="bg-white border border-top-0 p-4">
                                     <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                            href=""><?php echo $cateName[0]['name'] ?></a>
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href=""><?php echo $cateName[0]['name'] ?></a>
                                         <a class="text-body" href=""><small><?php //date format: Oct 31 , 2024
                                                                             echo $value['created_at'] ?></small></a>
                                     </div>

@@ -5,7 +5,7 @@
         </div>
         <div class="owl-carousel news-carousel carousel-item-4 position-relative">
             <?php
-            $get3NewItem = $item->getNewItem(1, 5);
+            $get3NewItem = $item->getNewItem(0, 6);
             foreach ($get3NewItem as $key => $value) :
                 $cateName = $category->getNameById($value['category']);
             ?>
@@ -13,8 +13,7 @@
                     <img class="img-fluid h-100" src="img/<?php echo $value['image'] ?>" style="object-fit: cover;">
                     <div class="overlay">
                         <div class="mb-2">
-                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                href=""><?php echo $cateName[0]['name'] ?></a>
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href=""><?php echo $cateName[0]['name'] ?></a>
                             <a class="text-white" href=""><small><?php //date format: Oct 31 , 2024
                                                                     echo $value['created_at'] ?></a></small></a>
                         </div>
