@@ -26,8 +26,7 @@
                      <div class="mb-2">
 
                          <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?php echo $cateName[0]['name'] ?></a>
-                         <a class="text-body" href=""><small><?php //date format: Oct 31 , 2024
-                                                                echo $value['created_at'] ?></small></a>
+                         <a class="text-body" href=""><?php echo isset($value['created_at']) ? date("M d, Y", strtotime($value['created_at'])) : 'No date available'; ?></small></a>
                      </div>
 
                      <a class="small text-body text-uppercase font-weight-medium" href=""><?php echo $value['name'] ?></a>
@@ -48,7 +47,7 @@
              <h5 class="mb-4 text-white text-uppercase font-weight-bold">Flickr Photos</h5>
              <div class="row">
                  <div class="col-4 mb-3">
-                     <a href=""><img class="w-100" src="img/<?php echo $value['image'] ?>" alt=""></a>
+                     <a href=""><img class="w-100" src="img/news-110x110-1.jpg" alt=""></a>
                  </div>
 
                  <a href=""><img class="w-100" src="img/news-110x110-1.jpg" alt=""></a>

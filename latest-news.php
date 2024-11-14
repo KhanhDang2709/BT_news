@@ -10,19 +10,19 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="position-relative mb-3">
-                            <?php
-                            $get3NewItem = $item->getNewItem(0, 3);
-                            foreach ($get3NewItem as $key => $value) :
-                                $cateName = $category->getNameById($value['category']);
-                            ?>
+                        <?php
+                        $get3NewItem = $item->getNewItem(0, 3);
+                        foreach ($get3NewItem as $key => $value) :
+                            $cateName = $category->getNameById($value['category']);
+                        ?>
+                            <div class="position-relative mb-3">
+
                                 <img class="img-fluid w-100" src="img/<?php echo $value['image'] ?>" style="object-fit: cover;">
 
                                 <div class="bg-white border border-top-0 p-4">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href=""><?php echo $cateName[0]['name'] ?></a>
-                                        <a class="text-body" href=""><small><?php //date format: Oct 31 , 2024
-                                                                            echo $value['created_at'] ?></small></a>
+                                        <a class="text-body" href=""><small><?php echo isset($value['created_at']) ? date("M d, Y", strtotime($value['created_at'])) : 'No date available'; ?></small></a>
                                     </div>
                                     <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href=""><?php echo $value['name'] ?></a>
                                     <p class="m-0"><?php echo $value['excerpt'] ?></p>
@@ -37,24 +37,23 @@
                                         <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
                                     </div>
                                 </div>
-
-                            <?php endforeach ?>
-                        </div>
+                            </div>
+                        <?php endforeach ?>
                     </div>
                     <div class="col-lg-6">
-                        <div class="position-relative mb-3">
-                            <?php
-                            $get3NewItem = $item->getNewItem(3, 5);
-                            foreach ($get3NewItem as $key => $value) :
-                                $cateName = $category->getNameById($value['category']);
-                            ?>
+                        <?php
+                        $get3NewItem = $item->getNewItem(3, 5);
+                        foreach ($get3NewItem as $key => $value) :
+                            $cateName = $category->getNameById($value['category']);
+                        ?>
+                            <div class="position-relative mb-3">
+
                                 <img class="img-fluid w-100" src="img/<?php echo $value['image'] ?>" style="object-fit: cover;">
 
                                 <div class="bg-white border border-top-0 p-4">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href=""><?php echo $cateName[0]['name'] ?></a>
-                                        <a class="text-body" href=""><small><?php //date format: Oct 31 , 2024
-                                                                            echo $value['created_at'] ?></small></a>
+                                        <a class="text-body" href=""><small><?php echo isset($value['created_at']) ? date("M d, Y", strtotime($value['created_at'])) : 'No date available'; ?></small></a>
                                     </div>
                                     <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href=""><?php echo $value['name'] ?></a>
                                     <p class="m-0"><?php echo $value['name'] ?></p>
@@ -69,9 +68,8 @@
                                         <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
                                     </div>
                                 </div>
-
-                            <?php endforeach ?>
-                        </div>
+                            </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
             </div>

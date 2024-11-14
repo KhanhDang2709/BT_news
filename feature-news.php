@@ -14,8 +14,7 @@
                     <div class="overlay">
                         <div class="mb-2">
                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href=""><?php echo $cateName[0]['name'] ?></a>
-                            <a class="text-white" href=""><small><?php //date format: Oct 31 , 2024
-                                                                    echo $value['created_at'] ?></a></small></a>
+                            <a class="text-white" href=""><small><?php echo isset($value['created_at']) ? date("M d, Y", strtotime($value['created_at'])) : 'No date available'; ?></a></small></a>
                         </div>
                         <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href=""><?php echo $value['name'] ?></a>
                     </div>

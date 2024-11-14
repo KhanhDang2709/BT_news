@@ -49,18 +49,22 @@
          <h4 class="m-0 text-uppercase font-weight-bold">Tranding News</h4>
      </div>
      <div class="bg-white border border-top-0 p-3">
-         <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-             <img class="img-fluid" src="img/<?php echo $value['image'] ?>" alt="">
-             <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                 <div class="mb-2">
-                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?php echo $cateName[0]['name'] ?></a>
-                     <a class="text-body" href=""><small><?php //date format: Oct 31 , 2024
-                                                            echo $value['created_at'] ?></small></a>
+         <?php
+            $get3NewItem = $item->getNewItem(0, 4);
+            foreach ($get3NewItem as $key => $value) :
+                $cateName = $category->getNameById($value['category']);
+            ?>
+             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                 <img class="img-fluid w-50 h-50" src="img/<?php echo $value['image'] ?>" alt="">
+                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                     <div class="mb-2">
+                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?php echo $cateName[0]['name'] ?></a>
+                         <a class="text-body" href=""><small><?php echo isset($value['created_at']) ? date("M d, Y", strtotime($value['created_at'])) : 'No date available'; ?></small></a>
+                     </div>
+                     <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href=""><?php echo $value['name'] ?></a>
                  </div>
-                 <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href=""><?php echo $value['name'] ?></a>
              </div>
-         </div>
-
+         <?php endforeach; ?>
      </div>
  </div>
  <!-- Popular News End -->
